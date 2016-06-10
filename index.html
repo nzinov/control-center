@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+        <script>
+function real_ready() {
+    var grid = document.querySelector('.grid');
+    var msnry = new Masonry( grid, {
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+}
+
+function ready() {
+    window.setTimeout(real_ready, 1000);
+}
+        </script>
+<style>
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+</style>
+    </head>
+    <body onload="ready()">
+        <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+            <div class="grid-item">
+            <a href="http://www.accuweather.com/ru/ru/krasnogorsk/289248/weather-forecast/289248" class="aw-widget-legal">
+                <!--
+                    By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
+                -->
+            </a><div id="awcc1465560187571" class="aw-widget-current"  data-locationkey="289248" data-unit="c" data-language="ru" data-useip="false" data-uid="awcc1465560187571"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script></div>
+            <div class="grid-item" style="width: 800px"><iframe frameborder="0" style="-moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); overflow: hidden; border: 0; width: 700px; height: 350px;" src="https://rasp.yandex.ru/informers/search/?fromId=s9601142&amp;toId=s9600741&amp;size=5&amp;color=1&amp;type=suburban"></iframe></div>
+            <div class="grid-item"><iframe src="http://free.timeanddate.com/clock/i58h05tb/n166/tlua33/fn11/fs24/ftb/tt0/tw1/tm1/th1/tb4" frameborder="0" width="200" height="58"></iframe></div>
+        </div>
+    </body>
+</html>
